@@ -1,0 +1,224 @@
+/* 
+* reset
+ */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  padding: 0 calc(50vw - 1140px / 2);
+}
+
+.header {
+  min-width: 100%;
+  min-height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #34495E;
+}
+
+.header__content {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 80%;
+          flex: 0 0 80%;
+}
+
+.header__button-basket {
+  background-color: #fff;
+}
+
+.button {
+  font-size: 21px;
+  padding: 10px 15px;
+  background-color: #3498DB;
+  border: none;
+  color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background-color: #2980B9;
+  color: #ECF0F1;
+}
+
+.goods {
+  text-align: center;
+}
+
+.goods-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: left;
+}
+
+/*
+CARD CSS 
+ */
+.card {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 calc(33.333% - 30px);
+          flex: 0 1 calc(33.333% - 30px);
+  min-width: 360px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 30px;
+  background: #f8f8f8;
+  text-decoration: none;
+}
+
+.card__img {
+  position: relative;
+}
+
+.card__img:hover .card__overlay {
+  opacity: 1;
+}
+
+.card__overlay {
+  opacity: 0;
+  position: absolute;
+  background-color: rgba(47, 55, 71, 0.86);
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all .25s ease-in;
+  transition: all .25s ease-in;
+}
+
+.card__btn {
+  width: 139px;
+  height: 44px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #fff;
+  background-color: transparent;
+  -webkit-transition: all .25s ease-in;
+  transition: all .25s ease-in;
+}
+
+.card__btn:hover {
+  color: #b3b3b3;
+  border: 1px solid #b3b3b3;
+}
+
+.card__btn:hover svg {
+  fill: #b3b3b3;
+}
+
+.card__icon {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+  margin-right: 11px;
+  margin-bottom: -5px;
+}
+
+.card__img-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.card__body {
+  max-width: 90%;
+  margin: 20px auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  text-decoration: none;
+}
+
+.card__title {
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 13px;
+  line-height: 16px;
+  color: #222224;
+}
+
+.card__description {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #5d5d5d;
+  margin: 15px 0;
+}
+
+.card__price {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 90%;
+  font-size: 16px;
+  line-height: 19px;
+  color: #3498DB;
+  margin: 0 auto 20px;
+}
+
+.products__header {
+  text-align: center;
+  margin: 60px 0 48px 0;
+}
+
+.products__header h3 {
+  margin: 0 0 6px 0;
+  font-size: 30px;
+  line-height: 36px;
+  color: #222;
+}
+
+.products__header p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 17px;
+  color: #9f9f9f;
+}
+/*# sourceMappingURL=style.css.map */
