@@ -1,0 +1,1 @@
+const API_URL = 'https://gist.githubusercontent.com/AlexMalyan/d05372bd990a97accb47dd383cded756/raw/0d06f0e5ad50d929b236213f7786983d098b1fd0/goods.json';

@@ -1,6 +1,17 @@
+const makeGetRequest = (url, callback) => {
+  fetch(url)
+    .then((data) => {
+      callback(data);
+    })
+    .catch(error => {
+      console.log(error);
+    })
+
+}
+
 class GoodsItem {
-  constructor(title = "no COMMENTS", price = "PRESENT") {
-    this.title = title;
+  constructor(name = "no COMMENTS", price = "PRESENT") {
+    this.name = name;
     this.price = price;
   }
 
@@ -22,7 +33,7 @@ class GoodsItem {
   </div>
   <a href="product.html" class="card__body ">
     <h4 class="card__title">
-      ${this.title}
+      ${this.name}
     </h4>
     <p class="card__description">@@text sit amet consectetur adipisicing elit. Soluta ipsum dolor sit amet oluta
       ipsum   dolor sit met</p>
@@ -40,18 +51,25 @@ class GoodsList {
   }
 
   fetchGoods() {
-    this.goods = [
-      { title: 'Shirt', price: 150 },
-      { title: 'Socks', price: 50 },
-      { title: 'Jacket', price: 350 },
-      { title: 'Shoes', price: 250 },
-    ];
+    fetch(API_URL)
+      .then(res => res.json())
+      .then(body => {
+        this.goods = body;
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    console.log(this.goods);
+
+    // makeGetRequest(API_URL , (goods) => {
+    //   this.goods = JSON.parse(goods);
+    // })
   }
 
   render() {
     let listHtml = ' ';
     this.goods.forEach(good => {
-      const goodItem = new GoodsItem(good.title, good.price);
+      const goodItem = new GoodsItem(good.name, good.price);
       listHtml += goodItem.render();
     });
     document.querySelector('.goods-list').innerHTML = listHtml;
@@ -66,12 +84,56 @@ class GoodsList {
     let totalGoodsAnswer = "Все товаров на сумму $" + totalPrice;
     document.querySelector('.goods-total').innerHTML = totalGoodsAnswer;
   }
-
-
 }
+
+// Класс элемента корзины
+class BasketItem {
+  // По сути, нам нужно отображать в корзине те же самые элементы, что и в списке
+  // constructor(...args) {
+  //   super(...args);
+  // }
+  //Другой вид сделаю позже
+  render() {
+
+  }
+}
+// Класс корзины
+class Basket {
+  constructor() {
+    // В классе корзины массив с добавленными товарами
+    this.addGoods = [];
+    this.deletedGoods = [];
+  }
+  // Добавление товара в корзину (привязываем на нажатие кнопки)
+  addToBasket() { }
+
+  // Удаление товара из корзины (привязываем на нажатие кнопки)
+  deleteFromBasket() { }
+
+  // Считаем стоимость и количество товаров в корзине
+  calcBasket() { }
+
+  // Метод, который определяет, добавлены ли в корзину какие-либо товары и при их наличии активирует кнопку "Оформить заказ"
+  isOrder() { }
+
+  // Рендер динамического содержимого корзины
+  render() { }
+
+  // Метод открывания корзины
+  openBasket() { }
+}
+// let CATALOG = []
+// fetch(API_URL)
+//   .then(res => res.json())
+//   .then(body => {
+//     CATALOG = body;
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   })
+// console.log(CATALOG);
 
 const list = new GoodsList();
 list.fetchGoods();
 list.render();
-// list.calcAllGoods();
 list.getCountGoods();
