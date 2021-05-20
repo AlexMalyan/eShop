@@ -135,5 +135,5 @@ class Basket {
 
 const list = new GoodsList();
 list.fetchGoods();
-list.render();
 list.getCountGoods();
+list.render();
